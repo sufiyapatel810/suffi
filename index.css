@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body,
+  #root {
+    background-color: #0C0C0C;
+    font-family: 'Kanit', sans-serif;
+    color: #D7E2EA;
+    scroll-behavior: smooth;
+  }
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero portrait with magnet */
+.hero-portrait-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 400px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  touch-action: pan-y;
+}
+@media (min-width: 640px) {
+  .hero-portrait-wrap {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .hero-portrait-wrap {
+    width: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-portrait-wrap {
+    width: clamp(640px, 78vh, 46vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  #root {
+    scroll-behavior: auto;
+  }
+}
